@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gocolly/colly"
+	"time"
 )
 
 const (
@@ -48,6 +49,8 @@ func scrape(url string) {
 		if err != nil {
 			fmt.Println(err)
 		}
+
+		time.Sleep(2 * time.Second)
 	})
 
 	listingCollector.OnError(func(r *colly.Response, err error) {
@@ -59,4 +62,6 @@ func scrape(url string) {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	time.Sleep(2 * time.Second)
 }
