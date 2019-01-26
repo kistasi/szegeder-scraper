@@ -6,7 +6,8 @@ import (
 )
 
 const (
-	baseUrl        = "http://szegeder.hu/"
+	baseUrl        = "http://szegeder.hu"
+	numberOfPages  = 23
 	articleLink    = "article.post h1.entry-title a"
 	articleTitle   = "article.post h1.entry-title"
 	articleDate    = "article.post time.entry-date"
@@ -15,6 +16,12 @@ const (
 )
 
 func main() {
+	for page := 0; page < numberOfPages; page++ {
+		scrape(fmt.Sprintf("%s/page/%d", baseUrl, page))
+	}
+}
+
+func scrape(url string) {
 	listingCollector := colly.NewCollector()
 
 	listingCollector.OnHTML(articleLink, func(article *colly.HTMLElement) {
@@ -47,7 +54,7 @@ func main() {
 		fmt.Println("Request URL:", r.Request.URL, "failed with response:", r, "\nError:", err)
 	})
 
-	err := listingCollector.Visit(baseUrl)
+	err := listingCollector.Visit(url)
 
 	if err != nil {
 		fmt.Println(err)
