@@ -8,7 +8,7 @@ import (
 
 const (
 	baseUrl        = "http://szegeder.hu"
-	numberOfPages  = 23
+	numberOfPages  = 27
 	articleLink    = "article.post h1.entry-title a"
 	articleTitle   = "article.post h1.entry-title"
 	articleDate    = "article.post time.entry-date"
