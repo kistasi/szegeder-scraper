@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/gocolly/colly"
 	"time"
+
+	"github.com/gocolly/colly"
 )
 
 const (
 	baseUrl        = "http://szegeder.hu"
-	numberOfPages  = 23
+	numberOfPages  = 31
 	articleLink    = "article.post h1.entry-title a"
 	articleTitle   = "article.post h1.entry-title"
 	articleDate    = "article.post time.entry-date"
