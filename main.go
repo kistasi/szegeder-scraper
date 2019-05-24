@@ -9,7 +9,11 @@ import (
 
 const (
 	baseUrl        = "http://szegeder.hu"
+<<<<<<< HEAD
 	numberOfPages  = 31
+=======
+	numberOfPages  = 27
+>>>>>>> 7256af6aca0a1847424743a9485103d71c744a49
 	articleLink    = "article.post h1.entry-title a"
 	articleTitle   = "article.post h1.entry-title"
 	articleDate    = "article.post time.entry-date"
